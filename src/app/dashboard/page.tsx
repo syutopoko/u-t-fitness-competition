@@ -10,7 +10,7 @@ import { supabase } from "@/lib/supabase/client";
 import type { Announcement, BodyMeasurement, FitnessRecord } from "@/lib/types";
 
 export default function DashboardPage() {
-  const { user, language } = useAuth();
+  const { user, profile, language } = useAuth();
   const [latestRecord, setLatestRecord] = useState<FitnessRecord | null>(null);
   const [latestBody, setLatestBody] = useState<BodyMeasurement | null>(null);
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
@@ -54,6 +54,12 @@ export default function DashboardPage() {
   return (
     <AppShell>
       <PageHeader title={t.appName[language]} subtitle={t.appSubtitle[language]} />
+
+      {profile?.role === "admin" ? (
+        <LinkButton className="sm:w-fit" href="/admin">
+          {t.goToAdmin[language]}
+        </LinkButton>
+      ) : null}
 
       <section className="grid gap-3 sm:grid-cols-3">
         <LinkButton href="/records/new">{t.newRecord[language]}</LinkButton>

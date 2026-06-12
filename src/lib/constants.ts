@@ -76,6 +76,7 @@ export const t = {
   rankings: { ja: "ランキング", en: "Rankings" },
   profile: { ja: "プロフィール", en: "Profile" },
   admin: { ja: "管理", en: "Admin" },
+  goToAdmin: { ja: "管理者画面へ", en: "Go to Admin" },
   latestFitness: { ja: "最新の体力テスト", en: "Latest fitness result" },
   latestBody: { ja: "最新の身体データ", en: "Latest body data" },
   announcements: { ja: "お知らせ", en: "Announcements" },
